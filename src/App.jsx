@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import Movie from "./components/Movie/Movie";
 import MovieList from "./components/MovieList/MovieList";
+import Error from "./components/Error";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="movie/:id" element={<Movie />}></Route>
             <Route path="movies/:type" element={<MovieList />}></Route>
-            <Route path="/*" element={<h1>Error Page</h1>}></Route>
+            <Route path="/*" element={<Error />}></Route>
     
           </Routes>
       </Router>
