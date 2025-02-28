@@ -78,12 +78,14 @@ const HomeMovie = () => {
   const displayError =
     searchQuery && searchQuery.trim() !== "" ? error : topError;
   const sectionTitle =
-    searchQuery && searchQuery.trim() !== "" ? "Search Results" : "Popular Movies";
+    searchQuery && searchQuery.trim() !== ""
+      ? "Search Results"
+      : "Popular Movies";
 
   return (
     <div className="px-12 py-4">
       {/* Search Section */}
-      <div className="flex my-10 mx-4 bg-white items-center py-3 px-4 mb-6 border border-gray-300 max-w-xs rounded-lg shadow-sm">
+      <div className="flex my-10 mx-4 overflow-hidden bg-white items-center py-3 px-4 mb-6 border border-gray-300 max-w-xs rounded-lg shadow-sm">
         <img src={searchimg} width={24} height={24} alt="Search Icon" />
         <input
           type="text"
@@ -118,17 +120,22 @@ const HomeMovie = () => {
         </div>
       )}
 
-      {/* Movies Grid */}
-      <div className="grid gap-6 p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {moviesToDisplay && moviesToDisplay.length > 0 ? (
-          moviesToDisplay.map((movie) => <Cards key={movie.id} movie={movie} />)
-        ) : (
-          !displayLoading && (
-            <p className="text-white col-span-full text-center">
-              No movies found
-            </p>
-          )
-        )}
+      {/* Movies Flex Container */}
+      <div className="flex flex-wrap justify-center items-stretch px-4 py-6 w-full">
+        {moviesToDisplay && moviesToDisplay.length > 0
+          ? moviesToDisplay.map((movie) => (
+              <div
+                key={movie.id}
+                className="p-3 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 flex justify-center"
+              >
+                <Cards movie={movie} />
+              </div>
+            ))
+          : !displayLoading && (
+              <p className="text-white text-center text-lg sm:text-xl mt-6 w-full">
+                No movies found 🎬
+              </p>
+            )}
       </div>
     </div>
   );
