@@ -14,7 +14,7 @@ const Movie = () => {
     const getData = async () => {
         try {
             const response = await fetch(
-                `https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+                `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US`
             );
             const data = await response.json();
             setMovie(data);

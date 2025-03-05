@@ -5,6 +5,7 @@ import Movie from "./components/Movie/Movie";
 import MovieList from "./components/MovieList/MovieList";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
+
 function App() {
   return (
     <>

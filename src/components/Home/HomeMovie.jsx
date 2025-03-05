@@ -12,7 +12,7 @@ const HomeMovie = () => {
   const [topLoading, setTopLoading] = useState(false);
   const [error, setError] = useState(null);
   const [topError, setTopError] = useState(null);
-  const API_KEY = "4e44d9029b1270a757cddc766a1bcb63";
+  
   const debounceRef = useRef(null);
 
   // Fetch movies based on search query.
@@ -24,7 +24,7 @@ const HomeMovie = () => {
     }
     try {
       setLoading(true);
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}`;
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&query=${query}`;
       const res = await fetch(url);
       if (!res.ok) throw new Error("Failed to fetch movies");
       const data = await res.json();
@@ -41,7 +41,7 @@ const HomeMovie = () => {
   const getTopMovies = async () => {
     try {
       setTopLoading(true);
-      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+      const url = `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US&page=1`;
       const res = await fetch(url);
       if (!res.ok) throw new Error("Failed to fetch top movies");
       const data = await res.json();

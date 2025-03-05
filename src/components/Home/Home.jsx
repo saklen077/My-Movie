@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-// import MovieList from "../MovieList/MovieList";
 import HomeMovie from "./HomeMovie";
 
 const Home = () => {
@@ -12,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
+      `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=en-US`
     )
       .then((res) => {
         if (!res.ok) {
