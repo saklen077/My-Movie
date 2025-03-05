@@ -1,5 +1,12 @@
-# React + Vite
-![image](https://github.com/user-attachments/assets/36a0e400-90f7-4ed1-97e9-8350964c071d)
+# Movies Website
+
+![image](https://github.com/user-attachments/assets/4c257aa6-0e89-4858-916c-02f08c9fdf9e)
+
+# Features
+-  Popular movies , Top Rated Movies and Upcoming Movies 
+-  External links to get the Details about movies.
+-  Custom searching
+
 
 
 - Popular movies , Top Rated Movies and Upcoming Movies.
