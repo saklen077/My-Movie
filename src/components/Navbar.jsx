@@ -1,5 +1,4 @@
 import React from "react";
-import dp from "../assets/dp.jpg";
 export default function Navbar() {
   return (
     <>
